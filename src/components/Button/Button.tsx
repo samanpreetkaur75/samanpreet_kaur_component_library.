@@ -83,11 +83,11 @@ const CustomButton = styled.button<IButton>`
 
 const Button: React.FC<IButton> = ({
                                      size = "medium",
-                                            disabled = false,
-                                            text,
-                                            handleClick,
-                                            ...props
-                                          }) => {
+                                     disabled = false,
+                                     text,
+                                     handleClick,
+                                     ...props
+                                   }) => {
   return (
       <CustomButton
           type="button"
