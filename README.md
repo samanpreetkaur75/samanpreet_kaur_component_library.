@@ -1,46 +1,56 @@
-# Getting Started with Create React App
+# React Component Library
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This document provides instructions to set up and run the React Component Library developed as part of the coding assignment. This library includes various UI components and is Dockerized for easy setup and deployment.
 
-In the project directory, you can run:
+## Prerequisites
 
-### `npm start`
+- Docker installed on your system.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Setup and Running the Application
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Cloning the Repository
 
-### `npm test`
+First, clone the repository to your local machine:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+git clone https://github.com/LeopoldXing/assignment12-web-component-library
+cd assignment12-web-component-library
+```
 
-### `npm run build`
+### Building the Docker Image
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To build the Docker image for the application, run the following command in the root directory of the project:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+docker build -t luping_xing_assignment12 .
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Running the Docker Container
 
-### `npm run eject`
+Once the image is built, you can run the container using:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+docker run -dp 8083:8083 --name luping_xing_assignment12 luping_xing_assignment12
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Accessing the Component Library
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+After the container starts, you can access the component library by navigating to [http://localhost:8083](http://localhost:8083)
+in your web browser.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Components
 
-## Learn More
+The library includes the following components:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Button
+- Label
+- Text
+- Table (with Table Header, Table Row, Table Cell, and Table Footer)
+- Dropdown
+- Radio Button
+- Image
+- Hero Image
+- Card
+  Each component is responsive and includes a default state and a disabled state.
