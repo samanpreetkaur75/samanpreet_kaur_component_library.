@@ -4,7 +4,7 @@ import Card from "./Card";
 import { ICard } from "./Card.types";
 
 export default {
-  title: "UI Components/Card",
+  title: "Components Assignment/Card",
   component: Card,
   parameters: {}
 } as Meta<ICard>;

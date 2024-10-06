@@ -4,7 +4,7 @@ import Button from './Button';
 import { IButton } from "./Button.types";
 
 export default {
-  title: 'UI Components/Button',
+  title: 'Components Assignment/Button',
   component: Button,
   parameters: {}
 } as Meta<IButton>;
