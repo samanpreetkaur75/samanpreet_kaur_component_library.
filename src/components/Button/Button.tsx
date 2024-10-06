@@ -1,16 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
-interface IButton {
-  label?: string;
-  isPrimary?: boolean;
-  isDisabled?: boolean;
-  buttonSize?: "small" | "medium" | "large";
-  handleClick?: React.MouseEventHandler<HTMLButtonElement>;
-  success?: boolean;
-  error?: boolean;
-  warning?: boolean;
-}
+import { IButton } from "./Button.types";
 
 const CustomButton = styled.button<IButton>`
     border-radius: 5px;
@@ -18,7 +8,7 @@ const CustomButton = styled.button<IButton>`
     justify-content: center;
     align-items: center;
     padding: ${(props) =>
-            props.buttonSize === "small" ? "6px 12px" : props.buttonSize === "medium" ? "10px 24px" : "16px 30px"};
+            props.size === "small" ? "6px 12px" : props.size === "medium" ? "10px 24px" : "16px 30px"};
     border: none;
     font-size: 1rem;
     min-width: 90px;
@@ -26,11 +16,11 @@ const CustomButton = styled.button<IButton>`
     font-family: "Arial", sans-serif;
     transition: all 0.3s ease;
 
-    background-color: ${(props) => props.isPrimary ? "#E4572E" : "#343434"};
+    background-color: ${(props) => props.primary ? "#E4572E" : "#343434"};
     color: #fff;
 
     &:hover {
-        background-color: ${(props) => (props.isPrimary ? "#FFA07A" : "#696969")};
+        background-color: ${(props) => (props.primary ? "#FFA07A" : "#696969")};
     }
 
     &:focus {
@@ -39,7 +29,7 @@ const CustomButton = styled.button<IButton>`
     }
 
     &:active {
-        background-color: ${(props) => (props.isPrimary ? "#AA381E" : "#1C1C1C")};
+        background-color: ${(props) => (props.primary ? "#AA381E" : "#1C1C1C")};
     }
 
     &:disabled {
@@ -91,10 +81,10 @@ const CustomButton = styled.button<IButton>`
     `}
 `;
 
-export const Button: React.FC<IButton> = ({
-                                            buttonSize = "medium",
-                                            isDisabled = false,
-                                            label,
+const Button: React.FC<IButton> = ({
+                                     size = "medium",
+                                            disabled = false,
+                                            text,
                                             handleClick,
                                             ...props
                                           }) => {
@@ -102,11 +92,13 @@ export const Button: React.FC<IButton> = ({
       <CustomButton
           type="button"
           onClick={handleClick}
-          disabled={isDisabled}
-          buttonSize={buttonSize}
+          disabled={disabled}
+          size={size}
           {...props}
-          aria-disabled={isDisabled ? true : undefined}>
-        {label}
+          aria-disabled={disabled ? true : undefined}>
+        {text}
       </CustomButton>
   );
 };
+
+export default Button
