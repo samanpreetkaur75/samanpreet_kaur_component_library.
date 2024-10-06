@@ -24,7 +24,7 @@ cd assignment12-web-component-library
 To build the Docker image for the application, run the following command in the root directory of the project:
 
 ```bash
-docker build -t luping_xing_assignment12 .
+docker build -t luping_xing_coding_assignment12 .
 ```
 
 ### Running the Docker Container
@@ -32,7 +32,7 @@ docker build -t luping_xing_assignment12 .
 Once the image is built, you can run the container using:
 
 ```bash
-docker run -dp 8083:8083 --name luping_xing_assignment12 luping_xing_assignment12
+docker run -dp 8083:8083 --name luping_xing_coding_assignment12 luping_xing_coding_assignment12
 ```
 
 ### Accessing the Component Library

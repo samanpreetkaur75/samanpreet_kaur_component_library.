@@ -14,6 +14,6 @@ const config: StorybookConfig = {
     name: "@storybook/react-webpack5",
     options: {},
   },
-  staticDirs: ["..\\public"],
+  staticDirs: ["/luping_xing_ui_garden/public"],
 };
 export default config;
