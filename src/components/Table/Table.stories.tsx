@@ -5,9 +5,9 @@ import TableHeader from "./TableHeader";
 import TableCell from "./TableCell";
 import TableRow from "./TableRow";
 import TableFooter from "./TableFooter";
-import { TableProps } from "./Table.types";
+import { ITable } from "./Table.types";
 
-const meta: Meta<TableProps> = {
+const meta: Meta<ITable> = {
   title: "Components Assignment/Table",
   component: Table,
   argTypes: {
@@ -20,7 +20,7 @@ const meta: Meta<TableProps> = {
 
 export default meta;
 
-const TableTemplate: StoryFn<TableProps> = (args) => (
+const TableTemplate: StoryFn<ITable> = (args) => (
     <Table {...args}>
       <TableHeader>
         <TableRow>

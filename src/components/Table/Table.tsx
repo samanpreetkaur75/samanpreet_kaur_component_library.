@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { TableProps } from './Table.types';
+import { ITable } from './Table.types';
 
-const CustomTable = styled.table<TableProps>`
+const CustomTable = styled.table<ITable>`
     width: 100%;
     border-collapse: collapse;
     background-color: ${({ disabled }) => (disabled ? '#f0f0f0' : 'white')};
@@ -11,7 +11,7 @@ const CustomTable = styled.table<TableProps>`
     opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
 `;
 
-const Table: React.FC<TableProps> = ({ children, ...props }) => {
+const Table: React.FC<ITable> = ({ children, ...props }) => {
   return <CustomTable {...props}>{children}</CustomTable>;
 };
 

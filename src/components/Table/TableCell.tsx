@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { TableCellProps } from './Table.types';
+import { ITableCell } from './Table.types';
 
-const CustomTableCell = styled.td<TableCellProps>`
+const CustomTableCell = styled.td<ITableCell>`
     padding: 10px;
     text-align: ${({ align }) => align};
     border-bottom: 1px solid #eee;
@@ -14,7 +14,7 @@ const CustomTableCell = styled.td<TableCellProps>`
     }
 `;
 
-const TableCell: React.FC<TableCellProps> = ({ children, align = "center" }) => {
+const TableCell: React.FC<ITableCell> = ({ children, align = "center" }) => {
   return <CustomTableCell align={align}>{children}</CustomTableCell>;
 };
 
