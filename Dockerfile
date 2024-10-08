@@ -1,30 +1,20 @@
-# Use an official Node.js runtime as a base image
-FROM node:22-alpine
+# Dockerfile
+FROM node:14
 
 # Set the working directory in the container
-RUN mkdir luping_xing_ui_garden
-WORKDIR /luping_xing_ui_garden
+WORKDIR /samanpreet_kaur_ui_garden
 
-# Copy the package.json file and package-lock.json file
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
 # Install dependencies
 RUN npm install
 
-# Copy the rest of source files
+# Copy the rest of the application code
 COPY . .
 
-# Build your component library
-RUN npm run rollup
-
-# Build the static Storybook
-RUN npm run build-storybook
-
-# npm install Install
+# Build the application for production
 RUN npm run build
 
-ENV PORT=8083
-EXPOSE 8083
-
-# The default command to run when starting the container
-CMD ["npm", "run", "storybook"]
+# Start the application using the build output
+CMD ["npx", "serve", "-s", "build","storybook"]
